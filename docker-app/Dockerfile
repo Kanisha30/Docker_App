@@ -6,18 +6,12 @@ WORKDIR /app
 
 # Copy the package.json and package-lock.json
 COPY package*.json ./
-COPY package-lock.json ./
 
 # Install dependencies
 RUN npm install
 
-# install app dependencies
-COPY package.json ./
-
-
 # Copy the rest of the application code
 COPY . .
-
 
 # Build the React app for production
 RUN npm run build
