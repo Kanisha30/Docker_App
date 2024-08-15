@@ -18,8 +18,6 @@ COPY package.json ./
 # Copy the rest of the application code
 COPY . .
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
 
 # Build the React app for production
 RUN npm run build
